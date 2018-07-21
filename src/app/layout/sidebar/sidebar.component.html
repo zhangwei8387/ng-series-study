@@ -1,0 +1,32 @@
+<div class="menu">
+  <ul nz-menu [nzMode]="'inline'" nzTheme='dark' [nzInlineCollapsed]="isCollapsed">
+    <div class="menu-title">
+      Angular系列学习
+    </div>
+    <li nz-menu-item routerLink="/project/introduction">
+      <span title>
+        <span>教程概述</span>
+      </span>
+    </li>
+    <li nz-submenu>
+      <span title>
+        <span>Angular</span>
+      </span>
+      <ul>
+        <li nz-menu-item routerLink="/angular/directive">指令</li>
+        <li nz-menu-item>组件</li>
+        <li nz-menu-item>路由</li>
+      </ul>
+    </li>
+    <li nz-submenu>
+      <span title>
+        <span>RxJS</span>
+      </span>
+      <ul>
+        <li nz-menu-item>观察者</li>
+        <li nz-menu-item>订阅</li>
+        <li nz-menu-item>操作符</li>
+      </ul>
+    </li>
+  </ul>
+</div>

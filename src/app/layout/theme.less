@@ -1,0 +1,71 @@
+// 以下部分针对的是router-outlet中的内容
+.tutorial {
+    float: left;
+    width: 80%;
+}
+
+.anchor {
+    float: left;
+    padding-left: 55px;
+    nz-link {
+        line-height: 18px;//修复bug因行高不够而导致无法完全显示英文,如g字母只能显示一半高度
+        a {//修复bug点击锚点时有下划线
+            text-decoration: none;
+        }
+    }
+}
+
+.card {
+    background-color: #F5F5F5;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-weight: bold;
+    margin: 15px 0px 15px 0px;
+}
+h2{
+    margin-top: 0px;
+}
+.tag {
+    color: #008;
+}
+
+.attribute {
+    color: #606;
+}
+
+.equal {
+    color: #660;
+}
+
+.value {
+    color: #800;
+}
+
+.default {
+    color: #000;
+}
+.key-word{//关键字
+    background-color: #f1f1f1;
+    padding-bottom: 2px;
+    line-height: 1px;
+}
+//注释背景
+.comment{
+    background-color: #b4f0b6;
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    margin: 15px 0px 15px 0px;
+}
+.pattern{
+    background-color: #333333;
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    color: #1dff1c;
+    margin: 15px 0px 15px 0px;
+}
