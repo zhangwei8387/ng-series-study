@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DirectiveComponent } from './directive/directive.component';
+import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
-  { path: 'directive', component: DirectiveComponent }
+  { path: 'directive', component: DirectiveComponent },
+  { path: 'create', component: CreateComponent }
 ];
 
 @NgModule({

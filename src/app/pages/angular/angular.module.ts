@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AngularRoutingModule } from './angular-routing.module';
 
 import { DirectiveComponent } from './directive/directive.component';
+import { CreateComponent } from './create/create.component';
+import { InitPageComponent } from './create/init-page/init-page.component';
 import { StructuralDirectiveComponent } from './directive/structural-directive/structural-directive-component';
 import { AttributeDirectiveComponent } from './directive/attribute-directive/attribute-directive-component';
 import { NssMilkTeaDirective } from './directive/structural-directive/nss-milk-tea-directive/milk-tea.directive';
@@ -12,7 +14,9 @@ import { NssStyleDirective } from './directive/attribute-directive/nss-style-dir
 const COMPONENTS_DECLARATIONS = [
     DirectiveComponent,
     StructuralDirectiveComponent,
-    AttributeDirectiveComponent
+    AttributeDirectiveComponent,
+    CreateComponent,
+    InitPageComponent
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,
