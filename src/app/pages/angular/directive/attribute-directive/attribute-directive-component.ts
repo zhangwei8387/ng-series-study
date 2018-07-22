@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
+import { BasicConfigurationService } from '../../../../core/common-configuration/common-configuration.service';
+
 @Component({
     selector: 'attribute-directive',
     templateUrl: './attribute-directive-component.html',
     styleUrls: ['./attribute-directive-component.less']
 })
 export class AttributeDirectiveComponent {
-    codemirrorConfig = {
-        lineNumbers: true,
-        theme: 'seti',
-        readOnly: true,
-    };
+    constructor(
+        private basicConfigurationService: BasicConfigurationService
+    ) {
+        this.codemirrorConfig = this.basicConfigurationService.getCodemirrorConfiguration();
+    }
+    codemirrorConfig;
     hobby = 'sweet';
     ngSwitchCode = `
     <nz-radio-group [(ngModel)]="hobby">
@@ -88,10 +91,4 @@ export class AttributeDirectiveComponent {
         很多东西,如果不是在最想要的时候得到,那之后即便是得到了,其实也没有多大意义了.
     </p>
     `;
-    constructor(
-    ) {
-    }
-    trackByCityCode(obj: { code: string, name: string }) {
-        return obj.code;
-    }
 }

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { LayoutModule } from './layout/layout.module';
+import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 
 
@@ -19,6 +20,7 @@ import { PagesModule } from './pages/pages.module';
     HttpClientModule,
     RouterModule,
     PagesModule,
+    CoreModule,
     LayoutModule
   ],
   providers: [],
