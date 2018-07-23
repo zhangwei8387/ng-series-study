@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BasicConfigurationService } from '../../../../core/common-configuration/common-configuration.service';
+import { BasicConfigurationService } from '../../../../core/common-configuration.service';
 @Component({
     selector: 'structural-directive',
     templateUrl: './structural-directive-component.html',

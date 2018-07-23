@@ -19,7 +19,12 @@
     <div *ngIf="gender=='女生'">我是女生</div>
 </nz-card>
 <h3 id="ngFor">*ngFor</h3>
-该指令用来遍历迭代器,一般用来遍历数组.
+该指令用来遍历迭代器,一般用来遍历数组.在下文中,你会看到一种写法
+<span class="key-word">let obj of ngForData</span>,这是在遍历
+<span class="key-word">ngForData</span>数组,遍历到每个元素的时候,都会将这个元素命名为
+<span class="key-word">obj</span>,这样就可以读取
+<span class="key-word">obj</span>的属性了.
+<span class="key-word">*ngFor</span>支持嵌套结构.
 <br/> *ngFor具有以下几种模板模板变量:
 <ul>
     <li>

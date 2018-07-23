@@ -5,6 +5,7 @@ import { AngularRoutingModule } from './angular-routing.module';
 
 import { DirectiveComponent } from './directive/directive.component';
 import { CreateComponent } from './create/create.component';
+import { ConventionalUsageComponent } from './conventional-usage/conventional-usage.component';
 import { InitPageComponent } from './create/init-page/init-page.component';
 import { StructuralDirectiveComponent } from './directive/structural-directive/structural-directive-component';
 import { AttributeDirectiveComponent } from './directive/attribute-directive/attribute-directive-component';
@@ -16,6 +17,7 @@ const COMPONENTS_DECLARATIONS = [
     StructuralDirectiveComponent,
     AttributeDirectiveComponent,
     CreateComponent,
+    ConventionalUsageComponent,
     InitPageComponent
 ];
 const DIRECTIVE_DECLARATIONS = [

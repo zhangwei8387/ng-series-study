@@ -1,5 +1,5 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { BasicConfigurationService } from './common-configuration/common-configuration.service';
+import { BasicConfigurationService } from './common-configuration.service';
 
 @NgModule({
     providers: [
