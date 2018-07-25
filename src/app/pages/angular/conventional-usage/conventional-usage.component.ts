@@ -4,7 +4,7 @@ import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
     templateUrl: './conventional-usage.component.html',
-    styleUrls: ['./conventional.component.less']
+    styleUrls: ['./conventiona-usagel.component.less']
 })
 export class ConventionalUsageComponent {
     constructor(
@@ -51,7 +51,6 @@ export class ConventionalUsageComponent {
     byArray = ['这个季节很干净,没有故事也没有你'];
     `;
     templateCode = 'template: <div><p>content</p></div>';
-    className = 'color';
     classCodeHtml = `
     <div class="{{className}}">
         <p>犬夜叉是真爱!</p>
@@ -66,6 +65,7 @@ export class ConventionalUsageComponent {
     classCodeTs = `
     className = 'color';
     `;
+    className = 'color';
     centence = '风铃响,故人归';
     showMsg(value: any) {
         this.messageService.info(value);

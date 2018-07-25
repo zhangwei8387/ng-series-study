@@ -16,18 +16,14 @@
         <li nz-menu-item routerLink="/angular/create">创建项目</li>
         <li nz-menu-item routerLink="/angular/conventional-usage">常规用法</li>
         <li nz-menu-item routerLink="/angular/directive">指令</li>
-        <li nz-menu-item>组件</li>
+        <li nz-submenu>
+          <span title>组件</span>
+          <ul>
+            <li nz-menu-item routerLink="/angular/component-communication">组件交互</li>
+            <li nz-menu-item routerLink="/angular/component-styles">组件样式</li>
+          </ul>
+        </li>
         <li nz-menu-item>路由</li>
-      </ul>
-    </li>
-    <li nz-submenu>
-      <span title>
-        <span>RxJS</span>
-      </span>
-      <ul>
-        <li nz-menu-item>观察者</li>
-        <li nz-menu-item>订阅</li>
-        <li nz-menu-item>操作符</li>
       </ul>
     </li>
   </ul>

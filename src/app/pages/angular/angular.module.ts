@@ -11,6 +11,9 @@ import { StructuralDirectiveComponent } from './directive/structural-directive/s
 import { AttributeDirectiveComponent } from './directive/attribute-directive/attribute-directive-component';
 import { NssMilkTeaDirective } from './directive/structural-directive/nss-milk-tea-directive/milk-tea.directive';
 import { NssStyleDirective } from './directive/attribute-directive/nss-style-directive/nss-style.directive';
+import { ComponentCommunicationComponent } from './component/component-communication/component-communication.component';
+import { ComponentStylesComponent } from './component/component-styles/component-styles.component';
+import { ChildCommunicationComponent } from './component/component-communication/child/child-communication.component';
 
 const COMPONENTS_DECLARATIONS = [
     DirectiveComponent,
@@ -18,7 +21,10 @@ const COMPONENTS_DECLARATIONS = [
     AttributeDirectiveComponent,
     CreateComponent,
     ConventionalUsageComponent,
-    InitPageComponent
+    InitPageComponent,
+    ComponentCommunicationComponent,
+    ComponentStylesComponent,
+    ChildCommunicationComponent
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,

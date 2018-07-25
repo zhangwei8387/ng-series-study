@@ -1,5 +1,5 @@
 <div class="tutorial">
-    <h2>默认代码分析</h2>
+    <h2 id="default-code-analyze">默认代码分析</h2>
     观察之前新建的项目,在
     <span class="key-word">app.component.ts</span>中可以看到如下代码
     <ul>
@@ -24,7 +24,7 @@
     <span class="key-word">styleUrls</span>是数组的形式,这意味着,他是允许使用多个样式的.
     <br/>
     <span class="key-word">selector</span>是一个选择器,其实就是给现在这个页面做个标记,方便在其他页面引用.
-    <div class="comment">
+    <div class="info">
         一开始可能大家很难理解
         <span class="key-word">selector</span>的作用,我给大家打个比方,大家看过火影忍者吗?四代火影的
         <a href="https://www.bilibili.com/video/av25055294?from=search&seid=396052408961630512" target="view_window">飞雷神</a> 需要先扔一个苦无作为标记,然后才能将自身传送至苦无所在的地方.这个
@@ -34,7 +34,7 @@
     <span class="key-word">templateUrl</span>,虽然模板文件只有一个,但并不一定要通过这个关键字声明.也可以使用
     <span class="key-word">template</span>来声明.二者的区别相信大家一眼就看出来,前者是指定了某一个html文件作为模板,后者是直接将html代码写在ts当中.两种方式随你喜欢,不影响使用.
     <codemirror [(ngModel)]="templateCode" [config]="codemirrorConfig"></codemirror>
-    <h2>插值表达式</h2>
+    <h2 id="interpolation">插值表达式</h2>
     思考一个问题,在传统开发中,JS定义了一个用户名,如何放在html当中合适的位置呢?查看如下所示代码,是否与你想的一样?
     <nz-tabset>
         <nz-tab nzTitle="html">
@@ -57,7 +57,7 @@
             </codemirror>
         </nz-tab>
     </nz-tabset>
-    <div class="comment">
+    <div class="info">
         这里需要大家记住一句话:
         <br/> JQ是
         <strong>事件驱动</strong>,Angular是
@@ -82,7 +82,7 @@
             </codemirror>
         </nz-tab>
     </nz-tabset>
-    <div class="comment">
+    <div class="info">
         其实在Angular当中,任何能够引用typescript成员变量的地方,都能够引用
         <strong>字符串</strong>、
         <strong>对象</strong>、
@@ -109,7 +109,7 @@
             </codemirror>
         </nz-tab>
     </nz-tabset>
-    <div class="comment">
+    <div class="info">
         注意,插值表达式可以用在
         <strong>属性值</strong>上,但不能用在
         <strong>属性名</strong>上,即只能用在等号的右侧,不能用在等号的左侧.
@@ -121,7 +121,7 @@
             <p>没有之一!</p>
         </div>
     </nz-card>
-    <h2>绑定机制</h2>
+    <h2 id="bind">绑定机制</h2>
     Angular最大的亮点就是他的绑定机制,一共有三种
     <ul>
         <li>属性 - 从数据源到视图(单向)</li>
@@ -137,7 +137,7 @@
     <span class="key-word">(click)="function()"</span>,在传统开发中,如果想要绑定点击事件,需要使用JS先查找DOM元素再添加监听事件,而在Angular中,不需要做这些事情,只需要在需要绑定的元素上使用
     <span class="key-word">(click)</span>即可,
     <span class="key-word">function()</span>是触发点击事件时调用的函数.
-    <div class="comment">
+    <div class="info">
         再次强调:
         <br/> JQ是
         <strong>事件驱动</strong>,Angular是
@@ -177,6 +177,9 @@
     <span class="key-word">showMsg(centence)</span>方法,而
     <span class="key-word">centence</span>的值是来自数据源的值,和上面input的
     <span class="key-word">ngModel</span>没有直接关系.所以这里在这个案例中,既有双向绑定又有单向绑定.
+    <h4>数据流图</h4>
+    附上一副hin凌乱的数据流向图...大概能看的懂吧...
+    <img src="../../../../assets/img/dataFlow.png">
     <h4>总结</h4>
     思考这样一个问题,案例1和案例4都是输入一个值,然后显示,二者有何区别?
     <br/> 效果虽然一样,但是思路是不一样的,案例1用的是模版引用变量,案例4用的是单双向绑定结合.
@@ -215,7 +218,7 @@
             <button (click)="showMsg(centence)" nz-button nzType="primary">弹出双向绑定的内容</button>
         </div>
     </nz-card>
-    <h2>安全导航操作符</h2>
+    <h2 id="safe-nav-op">安全导航操作符</h2>
     很多时候,我们的数据是从后台读取的.而后端的数据有可能会缺失某个字段,比如说有一个User实体,我们如果使用插值表达式等方式读取数据源的user.name不会有问题,因为每个人都有名字,但是如果访问user.lover,显然并不是每个人都有心爱之人(随便打的比方,不用太在意这个字段含义),就会出现有时候Angular报错,因为Angular检测到有时根本没有lover字段.
     <br/> 为了方便起见,Angular提供了安全导航操作符,只需要在需要引用的变量前加一个
     <span class="key-word">?</span>即可避免这个问题.
@@ -237,8 +240,8 @@
     </nz-card>
 </div>
 <nz-anchor class="anchor">
-    <nz-link nzHref="#init-angular-cli" nzTitle="默认代码分析"></nz-link>
-    <nz-link nzHref="#init-angular-cli" nzTitle="插值表达式"></nz-link>
-    <nz-link nzHref="#init-angular-cli" nzTitle="绑定机制"></nz-link>
-    <nz-link nzHref="#init-angular-cli" nzTitle="安全导航操作符"></nz-link>
+    <nz-link nzHref="#default-code-analyze" nzTitle="默认代码分析"></nz-link>
+    <nz-link nzHref="#interpolation" nzTitle="插值表达式"></nz-link>
+    <nz-link nzHref="#bind" nzTitle="绑定机制"></nz-link>
+    <nz-link nzHref="#safe-nav-op" nzTitle="安全导航操作符"></nz-link>
 </nz-anchor>

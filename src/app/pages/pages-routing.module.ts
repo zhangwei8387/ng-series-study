@@ -12,6 +12,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/project/introduction', pathMatch: 'full' },
       { path: 'project', loadChildren: './project/project.module#ProjectModule' },
       { path: 'angular', loadChildren: './angular/angular.module#AngularModule' },
+      { path: '**', redirectTo: '/project/introduction', pathMatch: 'full' },
     ],
   }
 ];

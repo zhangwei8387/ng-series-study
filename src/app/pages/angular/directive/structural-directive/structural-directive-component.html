@@ -98,7 +98,7 @@ Angular默认是以对象为标记的,一旦你更新数据源,Angular便更新�
 <h4>示例</h4>
 设定数据源是一个数组对象,包含的是城市名称与城市代码,当点击获取数据按钮时,更新数据源,
 <strong>更新前后的数据源只有湖州市的代码与名称更改为金华市的代码与名称,其余数据不变.</strong>因此,我们要实现的是,当城市代码改变时,才修改DOM结点.
-<div class="comment">
+<div class="info">
     说的通俗易懂一些,就是使用trackBy让Angular知道,用户是如何判断数据到底有没有发生变更的,所以我需要指定一个值作为依据,类似数据库的主键的概念,也就是说,当用户设定标识为某个值时,只有当那个值变更了,Angular才认为是真的变更了.
 </div>在
 <strong>运行结果</strong>中展示了使用
@@ -130,7 +130,7 @@ Angular默认是以对象为标记的,一旦你更新数据源,Angular便更新�
                 <button (click)="resetCitiesForNoTrack()" nz-button>还原数据</button>
             </div>
             <div nz-col class="gutter-row" nzSpan="16">
-                <img src="../../../../assets/img/angular/directive/noTrackBy.gif">
+                <img src="../../../../assets/img/noTrackBy.gif">
             </div>
         </div>
     </nz-tab>
@@ -148,7 +148,7 @@ Angular默认是以对象为标记的,一旦你更新数据源,Angular便更新�
                 <button (click)="resetCitiesForTrack()" nz-button>还原数据</button>
             </div>
             <div nz-col class="gutter-row" nzSpan="16">
-                <img src="../../../../assets/img/angular/directive/trackBy.gif">
+                <img src="../../../../assets/img/trackBy.gif">
             </div>
         </div>
     </nz-tab>
@@ -169,7 +169,7 @@ Angular允许用户自定义指令来满足更复杂的业务场景,自定义指
         <span class="key-word">declarations</span> 中声明
     </li>
 </ul>
-<div class="comment">
+<div class="info">
     由于指令涉及DOM操作,对于DOM操作部分在此不再赘述,可自行前往其他章节查看.
 </div>
 <h4>示例</h4>

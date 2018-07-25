@@ -1,7 +1,9 @@
 ## ng-series-study
 Angular系列学习指南,用最通俗易懂的语言与案例让初学者理解Angular的用法及其相关领域的内容,如RxJS,typescript等
 ### 如何使用教程?
-暂时只能使用 `git clone`到本地然后运行`ng serve`来打开项目,后期会购买域名绑定,方便大家直接访问
+1、使用 `git clone`下载到本地
+2、执行`npm install`或者使用`cnpm install`安装依赖,不过个人推荐使用`yarn`
+3、运行`ng serve --open`来打开项目
 ### 适用人群
 本教程针对没有太多Angular开发经验的新手或者只研发过一个项目但不是特别理解的开发者,大神请略过.
 ### 为什么不使用论坛作为教程载体?

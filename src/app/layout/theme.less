@@ -1,9 +1,10 @@
 // 以下部分针对的是router-outlet中的内容
+//左侧内容区
 .tutorial {
     float: left;
     width: 80%;
 }
-
+//右侧导航区
 .anchor {
     float: left;
     padding-left: 24px;
@@ -14,7 +15,7 @@
         }
     }
 }
-
+//卡片设置背景颜色
 .card {
     background-color: #F5F5F5;
 }
@@ -29,43 +30,39 @@ h5 {
 h2{
     margin-top: 0px;
 }
-.tag {
-    color: #008;
-}
-
-.attribute {
-    color: #606;
-}
-
-.equal {
-    color: #660;
-}
-
-.value {
-    color: #800;
-}
-
-.default {
-    color: #000;
-}
-.key-word{//关键字
+//关键字
+.key-word{
     background-color: #f1f1f1;
     padding-bottom: 2px;
     line-height: 1px;
 }
-//注释背景
-.comment{
-    background-color: #b4f0b6;
-    width: 100%;
-    height: auto;
-    padding: 16px;
-    margin: 15px 0px 15px 0px;
-}
+//格式,用于显示cmd命令
 .pattern{
     background-color: #333333;
     width: 100%;
     height: auto;
-    padding: 16px;
+    padding: 15px;
     color: #1dff1c;
+    margin: 15px 0px 15px 0px;
+}
+//以下为评论部分样式
+div.info{
+    padding: 15px;
+    border-radius: 4px;
+    color:rgba(0, 0, 0, .65);
+    border:1px solid #91d5ff;
+    background-color: #e6f7ff;
+    width: 100%;
+    height: auto;
+    margin: 15px 0px 15px 0px;
+}
+div.warning{
+    padding: 15px;
+    border-radius: 4px;
+    color:rgba(0, 0, 0, .65);
+    border:1px solid #ffe58f;
+    background-color: #fffbe6;
+    width: 100%;
+    height: auto;
     margin: 15px 0px 15px 0px;
 }

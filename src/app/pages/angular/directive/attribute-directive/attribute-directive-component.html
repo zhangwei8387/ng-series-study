@@ -16,7 +16,7 @@
         </codemirror>
     </nz-tab>
 </nz-tabset>
-<div class="comment">
+<div class="info">
     值得注意的是,
     <span class="key-word">stringExp</span>来自TS中的一个string类型变量,可能有人会好奇这个内容是否能够来自数组如
     <strong>arr.class</strong>,或者来自对象
@@ -61,7 +61,7 @@
 <span class="key-word">*ngSwitchCase</span>的值一致时,显示其DOM元素,否则移除.当所有
 <span class="key-word">*ngSwitchCase</span>都无法匹配时,则显示
 <span class="key-word">*ngSwitchDefault</span>的DOM元素
-<div class="comment">
+<div class="info">
     我们知道,结构型指令控制DOM元素的添加和移除,而属性型指令控制元素的外观,可是这里好像有这么一个问题:
     <span class="key-word">ngSwitich</span>和
     <span class="key-word">*ngSwitchCase</span>组合使用,只有符合要求的元素才会显示,这个功能涉及DOM元素的移除,为什么
@@ -121,7 +121,7 @@
 <div class="pattern">
     @Input('外部属性名') 内部属性名: 数据类型;
 </div>
-<div class="comment">
+<div class="info">
     如果不写外部属性名,
     <strong>直接@Input 属性名: 数据类型</strong> ,则意味着内外共用属性名.这是不推荐的,对外部属性名而言,一般建议要有前缀.在本项目中,以nss开头,你可以选择你们公司的名字作为前缀.如果没有前缀,容易与其他第三方依赖产生冲突.对内部属性名而言,前缀没有太多意义,因此一般建议内外部属性名区分开来.
 </div>
