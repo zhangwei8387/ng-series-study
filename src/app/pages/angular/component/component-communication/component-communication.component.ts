@@ -1,16 +1,25 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnDestroy } from '@angular/core';
 import { BasicConfigurationService } from '../../../../core/common-configuration.service';
 import { ChildCommunicationComponent } from './child/child-communication.component';
+import { CommunicationService } from './service/communication.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     templateUrl: './component-communication.component.html',
-    styleUrls: ['./component-communication.component.less']
+    styleUrls: ['./component-communication.component.less'],
+    providers: [CommunicationService]
 })
-export class ComponentCommunicationComponent {
+export class ComponentCommunicationComponent implements OnDestroy {
+    subscription: Subscription;
     constructor(
-        private basicConfigurationService: BasicConfigurationService
+        private basicConfigurationService: BasicConfigurationService,
+        private communicationService: CommunicationService
     ) {
         this.codemirrorConfig = this.basicConfigurationService.getCodemirrorConfiguration();
+        this.subscription = communicationService.child$.subscribe(value => {
+            this.drink = value.drink;
+            this.eat = value.eat;
+        });
     }
     codemirrorConfig;
     faterCodeHtml = `
@@ -152,5 +161,101 @@ export class ComponentCommunicationComponent {
         );
     }
     `;
+    drink = '奶茶';
+    eat = '泡芙';
+    transferDataByService() {
+        this.communicationService.fatherSend({ drink: this.drink, eat: this.eat });
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+    code17 = `
+    import { Injectable } from '@angular/core';
+    import { Subject } from 'rxjs';
 
+    @Injectable()
+    export class CommunicationService {
+        // 声明两个Subject并定义接收数据类型,在本案例中是一个对象
+        private father = new Subject<{ drink, eat }>();
+        private child = new Subject<{ drink, eat }>();
+        // 将Subject转化为Observable
+        father$ = this.father.asObservable();
+        child$ = this.child.asObservable();
+        /* 将变化的值,发送给订阅者 */
+        fatherSend(value: { drink, eat }) {
+            this.father.next(value);
+        }
+        childSend(value: { drink, eat }) {
+            this.child.next(value);
+        }
+    }
+    `;
+    code18 = `
+    <h1>父组件</h1>
+    <input nz-input class="input" [(ngModel)]="drink" name="drink" placeholder="最爱喝的饮料">
+    <input nz-input class="input" [(ngModel)]="eat" name="eat" placeholder="最爱吃的甜点">
+    <button (click)="transferDataByService()" nz-button nzType="primary">传值给子组件</button>
+    <child-communication></child-communication>
+    `;
+    code19 = `
+    import { CommunicationService } from './service/communication.service';
+    import { Subscription } from 'rxjs';
+
+    @Component({
+        templateUrl: './component-communication.component.html',
+        styleUrls: ['./component-communication.component.less'],
+        providers: [CommunicationService]
+    })
+    export class ComponentCommunicationComponent implements OnDestroy {
+        subscription: Subscription;
+        constructor(
+            private communicationService: CommunicationService
+        ) {
+            this.subscription = communicationService.child$.subscribe(value => {
+                this.drink = value.drink;
+                this.eat = value.eat;
+            });
+        }
+        drink = '奶茶';
+        eat = '泡芙';
+        transferDataByService() {
+            this.communicationService.fatherSend({ drink: this.drink, eat: this.eat });
+        }
+        ngOnDestroy() {
+            this.subscription.unsubscribe();
+        }
+    }
+    `;
+    code20 = `
+    <h1>子组件</h1>
+    <input nz-input class="input" [(ngModel)]="drink" name="drink" placeholder="最爱喝的饮料">
+    <input nz-input class="input" [(ngModel)]="eat" name="eat" placeholder="最爱吃的甜点">
+    <button (click)="transferDataByService()" nz-button nzType="primary">传值给父组件</button>
+    `;
+    code21 = `
+    import { Subscription } from 'rxjs';
+
+    @Component({
+        selector: 'child-communication',
+        templateUrl: './child-communication.component.html',
+        styleUrls: ['./child-communication.component.less']
+    })
+    export class ChildCommunicationComponent implements OnDestroy {
+        subscription: Subscription;
+        constructor(private communicationService: CommunicationService) {
+            this.subscription = communicationService.father$.subscribe(value => {
+                this.drink = value.drink;
+                this.eat = value.eat;
+            });
+        }
+        drink;
+        eat;
+        transferDataByService() {
+            this.communicationService.childSend({ drink: this.drink, eat: this.eat });
+        }
+        ngOnDestroy() {
+            this.subscription.unsubscribe();
+        }
+    }
+    `;
 }

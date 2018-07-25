@@ -1,13 +1,22 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
+import { CommunicationService } from '../service/communication.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'child-communication',
     templateUrl: './child-communication.component.html',
     styleUrls: ['./child-communication.component.less']
 })
-export class ChildCommunicationComponent {
-    constructor(private messageService: NzMessageService) { }
+export class ChildCommunicationComponent implements OnDestroy {
+    subscription: Subscription;
+    constructor(private messageService: NzMessageService,
+        private communicationService: CommunicationService) {
+        this.subscription = communicationService.father$.subscribe(value => {
+            this.drink = value.drink;
+            this.eat = value.eat;
+        });
+    }
     @Input() index: number;
     @Input() childValue1: string;
     childValue2;
@@ -29,5 +38,13 @@ export class ChildCommunicationComponent {
                 bornYear: this.bornYear
             }
         );
+    }
+    drink;
+    eat;
+    transferDataByService() {
+        this.communicationService.childSend({ drink: this.drink, eat: this.eat });
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 }

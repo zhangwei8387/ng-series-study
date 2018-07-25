@@ -14,6 +14,9 @@ import { NssStyleDirective } from './directive/attribute-directive/nss-style-dir
 import { ComponentCommunicationComponent } from './component/component-communication/component-communication.component';
 import { ComponentStylesComponent } from './component/component-styles/component-styles.component';
 import { ChildCommunicationComponent } from './component/component-communication/child/child-communication.component';
+import { ChildStyles1Component } from './component/component-styles/child/child1/child-styles.component';
+import { ChildStyles2Component } from './component/component-styles/child/child2/child-styles.component';
+import { ChildStyles3Component } from './component/component-styles/child/child3/child-styles.component';
 
 const COMPONENTS_DECLARATIONS = [
     DirectiveComponent,
@@ -24,7 +27,10 @@ const COMPONENTS_DECLARATIONS = [
     InitPageComponent,
     ComponentCommunicationComponent,
     ComponentStylesComponent,
-    ChildCommunicationComponent
+    ChildCommunicationComponent,
+    ChildStyles1Component,
+    ChildStyles2Component,
+    ChildStyles3Component
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,
