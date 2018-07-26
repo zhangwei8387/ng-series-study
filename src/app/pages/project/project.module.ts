@@ -4,9 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProjectRoutingModule } from './project-routing.module';
 
 import { IntroductionComponent } from './introduction/introduction.component';
+import { AuthorComponent } from './author/author.component';
 
 const COMPONENTS_DECLARATIONS = [
     IntroductionComponent,
+    AuthorComponent
 ];
 const DIRECTIVE_DECLARATIONS = [
 

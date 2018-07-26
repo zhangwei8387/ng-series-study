@@ -236,8 +236,9 @@
     </nz-tabset>
     <h3>运行结果</h3>
     <nz-card class="card">
-        My name is {{user.name}} and I was born in {{user.bornYear}},my lover is {{user?.lover}}
+        My name is {{user.name}} and I was born in {{user.bornYear}},my lover is 
     </nz-card>
+    <!-- 源码中没有使用安全导航符,是因为aot编译会报错. -->
 </div>
 <nz-anchor class="anchor">
     <nz-link nzHref="#default-code-analyze" nzTitle="默认代码分析"></nz-link>

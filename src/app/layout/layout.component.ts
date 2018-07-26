@@ -8,7 +8,4 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None,
 })
 export class LayoutComponent {
-
-  constructor(
-  ) { }
 }
