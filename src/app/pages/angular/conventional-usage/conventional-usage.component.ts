@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BasicConfigurationService } from '../../../core/common-configuration.service';
 import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
@@ -8,12 +7,9 @@ import { NzMessageService } from 'ng-zorro-antd';
 })
 export class ConventionalUsageComponent {
     constructor(
-        private basicConfigurationService: BasicConfigurationService,
         private messageService: NzMessageService
     ) {
-        this.codemirrorConfig = this.basicConfigurationService.getCodemirrorConfiguration();
     }
-    codemirrorConfig;
     templateUrlCode = `
     selector: 'app-root',
     templateUrl: './app.component.html',

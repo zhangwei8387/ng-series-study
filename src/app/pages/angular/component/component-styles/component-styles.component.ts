@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BasicConfigurationService } from '../../../../core/common-configuration.service';
 
 @Component({
     templateUrl: './component-styles.component.html',
@@ -7,11 +6,8 @@ import { BasicConfigurationService } from '../../../../core/common-configuration
 })
 export class ComponentStylesComponent {
     constructor(
-        private basicConfigurationService: BasicConfigurationService
     ) {
-        this.codemirrorConfig = this.basicConfigurationService.getCodemirrorConfiguration();
     }
-    codemirrorConfig;
     code1 = `
     <h1>父组件</h1>
     <span class="color bgColor">父组件的内容</span>
@@ -78,6 +74,11 @@ export class ComponentStylesComponent {
     @import './xxx.css';
     `;
     code13 = `
+    @Component({
+        encapsulation: ViewEncapsulation.Native
+    })
+    `;
+    code = `
     @Component({
         encapsulation: ViewEncapsulation.Native
     })

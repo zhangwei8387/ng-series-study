@@ -12,20 +12,20 @@
     <br/> 在父子组件的内容中,同时应用了这两种样式,通过效果可以发现,父子组件样式互相并不影响.
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="code1" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code1">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="父组件css">
-            <codemirror [(ngModel)]="code2" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code2">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件html">
-            <codemirror [(ngModel)]="code3" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code3">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件css">
-            <codemirror [(ngModel)]="code4" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code4">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h3>运行结果</h3>
@@ -44,12 +44,12 @@
     <span class="key-word">:host</span>,意味着在整个子组件的根元素上添加样式,而小括号内的参数,其实你猜猜也应该知道是什么意思了,起到过滤作用.也就是说,只有子组件根元素上存在这个选择器类名的组件才应用这个样式,如下面这个例子
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="code5" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code5">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件css">
-            <codemirror [(ngModel)]="code6" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code6">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <div class="warning">
@@ -70,16 +70,16 @@
     当父组件的样式表中使用了刺穿选择器时,即可将样式应用在子组件当中.
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="code7" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code7">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="父组件css">
-            <codemirror [(ngModel)]="code8" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code8">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件html">
-            <codemirror [(ngModel)]="code9" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code9">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h3>运行结果</h3>
@@ -98,12 +98,12 @@
     </div>
     <nz-tabset>
         <nz-tab nzTitle="链接外部文件">
-            <codemirror [(ngModel)]="code10" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code10">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="使用内嵌代码">
-            <codemirror [(ngModel)]="code11" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code11">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <div class="warning">
@@ -122,8 +122,8 @@
     <span class="key-word">angular-cli.json</span>中添加,搜索
     <span class="key-word">styles.less</span>即可.
     <br/> 为了解决第二个问题,你可以在局部需要的那些样式文件中引入样式文件
-    <codemirror [(ngModel)]="code12" [config]="codemirrorConfig">
-    </codemirror>
+    <code-mirror [code]="code12">
+    </code-mirror>
     <div class="warning">
         我是指在css中引入css,这个语法在Angular当中是支持的.
     </div>
@@ -141,8 +141,8 @@
     <span class="key-word">Native</span>模式解决,译注"不进不出，没有样式能进来，组件样式出不去"
     <br/> 第三种模式是
     <span class="key-word">None</span>,译注"能进能出".其实这种方式会导致所有组件互相污染样式,我想不到这种方式的应用场景,如果有大神知道麻烦点拨一下.
-    <codemirror [(ngModel)]="code13" [config]="codemirrorConfig">
-    </codemirror>
+    <code-mirror [code]="code13">
+    </code-mirror>
     <div class="info">
         <span class="key-word">ViewEncapsulation</span>需要引入,属于
         <span class="key-word">@angular/core</span>包.

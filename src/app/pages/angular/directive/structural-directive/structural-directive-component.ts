@@ -1,17 +1,10 @@
 import { Component } from '@angular/core';
-import { BasicConfigurationService } from '../../../../core/common-configuration.service';
 @Component({
     selector: 'structural-directive',
     templateUrl: './structural-directive-component.html',
     styleUrls: ['./structural-directive-component.less']
 })
 export class StructuralDirectiveComponent {
-    constructor(
-        private basicConfigurationService: BasicConfigurationService
-    ) {
-        this.codemirrorConfig = this.basicConfigurationService.getCodemirrorConfiguration();
-    }
-    codemirrorConfig;
     gender = '男生';
     ngIfCode = `
     <nz-radio-group [(ngModel)]="gender">

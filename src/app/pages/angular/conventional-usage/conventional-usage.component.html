@@ -13,8 +13,8 @@
             <span class="key-word">styleUrls</span>指明使用哪些CSS样式表
         </li>
     </ul>
-    <codemirror [(ngModel)]="templateUrlCode" [config]="codemirrorConfig">
-    </codemirror>
+    <code-mirror [code]="templateUrlCode">
+    </code-mirror>
     我们知道,传统页面都是html+css+js组成的,那么我们回忆下,是谁将这三者结合在一起的?没错,是html.使用
     <span class="key-word">link</span>和
     <span class="key-word">script</span>标签引入样式表和脚本文件.所以,在传统页面中,
@@ -33,28 +33,28 @@
     </div>
     <span class="key-word">templateUrl</span>,虽然模板文件只有一个,但并不一定要通过这个关键字声明.也可以使用
     <span class="key-word">template</span>来声明.二者的区别相信大家一眼就看出来,前者是指定了某一个html文件作为模板,后者是直接将html代码写在ts当中.两种方式随你喜欢,不影响使用.
-    <codemirror [(ngModel)]="templateCode" [config]="codemirrorConfig"></codemirror>
+    <code-mirror [code]="templateCode"></code-mirror>
     <h2 id="interpolation">插值表达式</h2>
     思考一个问题,在传统开发中,JS定义了一个用户名,如何放在html当中合适的位置呢?查看如下所示代码,是否与你想的一样?
     <nz-tabset>
         <nz-tab nzTitle="html">
-            <codemirror [(ngModel)]="insertCodeHtml" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="insertCodeHtml">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="javascript">
-            <codemirror [(ngModel)]="insertCodeJs" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="insertCodeJs">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     在Angular当中,不需要这么复杂,只需如下代码即可成功显示变量
     <nz-tabset>
         <nz-tab nzTitle="html">
-            <codemirror [(ngModel)]="insertCodeHtmlInNg" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="insertCodeHtmlInNg">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="typescript">
-            <codemirror [(ngModel)]="insertCodeTs" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="insertCodeTs">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <div class="info">
@@ -74,12 +74,12 @@
     <span class="key-word">插值表达式</span>,即用双花括号即可引用TS中的变量,对象,数组内容等,如下所示
     <nz-tabset>
         <nz-tab nzTitle="html">
-            <codemirror [(ngModel)]="showDataCodeHtml" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="showDataCodeHtml">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="typescript">
-            <codemirror [(ngModel)]="showDataCodeTs" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="showDataCodeTs">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <div class="info">
@@ -97,16 +97,16 @@
     插值表达式不仅能够用在纯文本的地方,还能用在属性上.
     <nz-tabset>
         <nz-tab nzTitle="html">
-            <codemirror [(ngModel)]="classCodeHtml" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="classCodeHtml">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="css">
-            <codemirror [(ngModel)]="classCodeCss" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="classCodeCss">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="typescript">
-            <codemirror [(ngModel)]="classCodeTs" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="classCodeTs">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <div class="info">
@@ -146,12 +146,12 @@
     </div>
     <nz-tabset>
         <nz-tab nzTitle="html">
-            <codemirror [(ngModel)]="bindCodeHtml" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="bindCodeHtml">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="typescript">
-            <codemirror [(ngModel)]="bindCodeTs" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="bindCodeTs">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h4>案例1</h4>
@@ -226,12 +226,12 @@
     我作为一个单身狗(为了写教程,下血本了),我是没有的lover的(┬＿┬).所以,当在模板中引用我的lover字段时是会报错的,然而你能看到信息都能正常显示,只是没有lover信息(这是合理的,因为没有定义这个字段).
     <nz-tabset>
         <nz-tab nzTitle="html">
-            <codemirror [(ngModel)]="safeCodeHtml" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="safeCodeHtml">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="typescript">
-            <codemirror [(ngModel)]="safeCodeTs" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="safeCodeTs">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h3>运行结果</h3>

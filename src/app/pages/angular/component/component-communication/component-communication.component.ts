@@ -1,5 +1,4 @@
 import { Component, ViewChild, OnDestroy } from '@angular/core';
-import { BasicConfigurationService } from '../../../../core/common-configuration.service';
 import { ChildCommunicationComponent } from './child/child-communication.component';
 import { CommunicationService } from './service/communication.service';
 import { Subscription } from 'rxjs';
@@ -12,16 +11,13 @@ import { Subscription } from 'rxjs';
 export class ComponentCommunicationComponent implements OnDestroy {
     subscription: Subscription;
     constructor(
-        private basicConfigurationService: BasicConfigurationService,
         private communicationService: CommunicationService
     ) {
-        this.codemirrorConfig = this.basicConfigurationService.getCodemirrorConfiguration();
         this.subscription = communicationService.child$.subscribe(value => {
             this.drink = value.drink;
             this.eat = value.eat;
         });
     }
-    codemirrorConfig;
     faterCodeHtml = `
     <h1>我是父组件</h1>
     <input nz-input class="input" placeholder="父组件的输入框">

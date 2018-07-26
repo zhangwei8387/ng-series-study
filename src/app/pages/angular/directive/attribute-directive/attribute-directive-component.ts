@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BasicConfigurationService } from '../../../../core/common-configuration.service';
 
 @Component({
     selector: 'attribute-directive',
@@ -7,12 +6,6 @@ import { BasicConfigurationService } from '../../../../core/common-configuration
     styleUrls: ['./attribute-directive-component.less']
 })
 export class AttributeDirectiveComponent {
-    constructor(
-        private basicConfigurationService: BasicConfigurationService
-    ) {
-        this.codemirrorConfig = this.basicConfigurationService.getCodemirrorConfiguration();
-    }
-    codemirrorConfig;
     hobby = 'sweet';
     ngSwitchCode = `
     <nz-radio-group [(ngModel)]="hobby">

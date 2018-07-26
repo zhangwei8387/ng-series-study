@@ -1,7 +1,7 @@
 <div class="tutorial">
     <h2 id="sketch">组件简述</h2>
     在
-    <a routerLink="/angular/create">指令</a>部分提到过,组件属于指令的一种,因为组件是Angular当中非常重要的一个概念,且内容繁杂,因此单独拿出来讲解.
+    <a routerLink="/angular/structural-directive">指令</a>部分提到过,组件属于指令的一种,因为组件是Angular当中非常重要的一个概念,且内容繁杂,因此单独拿出来讲解.
     <br/> 我们可以将每个页面都看作一个组件,实际上,组件支持嵌套,也就是说,一个页面当中,还可能包含多个组件.
     <div class="info">
         在传统页面开发中,我们一般将一个页面划分为头部、底部、侧边栏等部分,其实每个部分,就是组件.所以组件有点类似搭积木的意思,将不同部分抽象出来,摆成需要的样子.如这个教程项目,你点击侧边栏的导航关键字,可以看到只有右侧内容区变化了,底部和侧边栏依旧没变化,因为只有右侧的组件替换了.
@@ -21,16 +21,16 @@
     </div>
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="faterCodeHtml" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="faterCodeHtml">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件html">
-            <codemirror [(ngModel)]="childCodeHtml" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="childCodeHtml">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件typescript">
-            <codemirror [(ngModel)]="childCodeTs" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="childCodeTs">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h3>运行结果</h3>
@@ -58,20 +58,20 @@
     </ol>
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="code1" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code1">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="父组件typescript">
-            <codemirror [(ngModel)]="code2" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code2">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件html">
-            <codemirror [(ngModel)]="code3" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code3">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件typescript">
-            <codemirror [(ngModel)]="code4" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code4">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <div class="info">
@@ -121,20 +121,20 @@
     尝试换位思考,那Angular只能知道你有这个子组件,但是无法定位你子组件所在的位置,是不是这个道理?所以自然无法取得子组件的动态成员变量.
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="code5" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code5">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="父组件typescript">
-            <codemirror [(ngModel)]="code6" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code6">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件html">
-            <codemirror [(ngModel)]="code7" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code7">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件typescript">
-            <codemirror [(ngModel)]="code8" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code8">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h4>运行结果</h4>
@@ -152,20 +152,20 @@
     <br/> 现在回头看看我之前关于飞雷神的比方,是不是觉得很贴切?
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="code9" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code9">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="父组件typescript">
-            <codemirror [(ngModel)]="code10" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code10">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件html">
-            <codemirror [(ngModel)]="code11" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code11">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件typescript">
-            <codemirror [(ngModel)]="code12" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code12">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h4>运行结果</h4>
@@ -197,20 +197,20 @@
     </div>
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="code13" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code13">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="父组件typescript">
-            <codemirror [(ngModel)]="code14" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code14">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件html">
-            <codemirror [(ngModel)]="code15" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code15">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件typescript">
-            <codemirror [(ngModel)]="code16" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code16">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h3>运行结果</h3>
@@ -239,24 +239,24 @@
     </div>
     <nz-tabset>
         <nz-tab nzTitle="service">
-            <codemirror [(ngModel)]="code17" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code17">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="父组件html">
-            <codemirror [(ngModel)]="code18" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code18">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="父组件typescript">
-            <codemirror [(ngModel)]="code19" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code19">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件html">
-            <codemirror [(ngModel)]="code20" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code20">
+            </code-mirror>
         </nz-tab>
         <nz-tab nzTitle="子组件typescript">
-            <codemirror [(ngModel)]="code21" [config]="codemirrorConfig">
-            </codemirror>
+            <code-mirror [code]="code21">
+            </code-mirror>
         </nz-tab>
     </nz-tabset>
     <h3>运行结果</h3>

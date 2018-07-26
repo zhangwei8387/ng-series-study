@@ -17,6 +17,7 @@ import { ChildCommunicationComponent } from './component/component-communication
 import { ChildStyles1Component } from './component/component-styles/child/child1/child-styles.component';
 import { ChildStyles2Component } from './component/component-styles/child/child2/child-styles.component';
 import { ChildStyles3Component } from './component/component-styles/child/child3/child-styles.component';
+import { CodemirrorComponent } from '../child-common/codemirror/codemirror.component';
 
 const COMPONENTS_DECLARATIONS = [
     DirectiveComponent,
@@ -30,7 +31,8 @@ const COMPONENTS_DECLARATIONS = [
     ChildCommunicationComponent,
     ChildStyles1Component,
     ChildStyles2Component,
-    ChildStyles3Component
+    ChildStyles3Component,
+    CodemirrorComponent
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,
