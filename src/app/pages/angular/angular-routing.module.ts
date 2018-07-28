@@ -7,6 +7,7 @@ import { ComponentCommunicationComponent } from './component/component-communica
 import { ComponentStylesComponent } from './component/component-styles/component-styles.component';
 import { StructuralDirectiveComponent } from './directive/structural-directive/structural-directive-component';
 import { AttributeDirectiveComponent } from './directive/attribute-directive/attribute-directive-component';
+import { DynamicComponentComponent } from './component/dynamic-component/dynamic-component.component';
 
 const routes: Routes = [
   { path: 'structural-directive', component: StructuralDirectiveComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'conventional-usage', component: ConventionalUsageComponent },
   { path: 'component-communication', component: ComponentCommunicationComponent },
   { path: 'component-styles', component: ComponentStylesComponent },
+  { path: 'dynamic-component', component: DynamicComponentComponent },
 ];
 
 @NgModule({
