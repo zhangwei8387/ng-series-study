@@ -20,6 +20,7 @@ import { ChildStyles3Component } from './component/component-styles/child/child3
 import { CodemirrorComponent } from '../child-common/codemirror/codemirror.component';
 import { DynamicComponentComponent } from './component/dynamic-component/dynamic-component.component';
 import { AddPersonComponent } from './component/dynamic-component/child/add-person.component';
+import { StomachComponent } from './conventional-usage/stomach/stomach.component';
 
 const COMPONENTS_DECLARATIONS = [
     DirectiveComponent,
@@ -36,6 +37,7 @@ const COMPONENTS_DECLARATIONS = [
     ChildStyles3Component,
     CodemirrorComponent,
     DynamicComponentComponent,
+    StomachComponent,
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,

@@ -3,7 +3,7 @@ import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
     templateUrl: './conventional-usage.component.html',
-    styleUrls: ['./conventiona-usagel.component.less']
+    styleUrls: ['./conventional-usagel.component.less']
 })
 export class ConventionalUsageComponent {
     constructor(
@@ -38,7 +38,7 @@ export class ConventionalUsageComponent {
     byArray = ['这个季节很干净,没有故事也没有你'];
     showDataCodeHtml = `
     <p>{{byString}}</p>
-    <p>{{byObject.name}}</p>
+    <p>{{byObject.centence}}</p>
     <p>{{byArray[0]}}</p>
     `;
     showDataCodeTs = `
@@ -107,5 +107,47 @@ export class ConventionalUsageComponent {
         name: 'Eve',
         bornYear: '1995'
     };  
+    `;
+    sentence = '这个世界其实是公平的';
+    code1 = `
+    <!--不包含内容的子组件-->
+    <child></child>
+
+    <!--包含内容的子组件-->
+    <child>
+        <p>内容</p>
+    </child>
+    `;
+    code2 = `
+    <h1>父组件</h1>
+    <input nz-input [(ngModel)]="sentence" name="sentence" class="sentence">
+    <stomach>
+        <div style="margin-bottom: 14px;">{{sentence}}</div>
+        <p>所谓的不公,只是不符合人类社会法则</p>
+        <span class="className">却符合因果关系</span>
+    </stomach>
+    `;
+    code3 = `
+    <h1>子组件</h1>
+    <ng-content></ng-content>
+    <ng-content select="p"></ng-content>
+    <ng-content select=".className"></ng-content>
+    `;
+    code4 = `
+    我想大声地告诉你:
+    <ng-template>
+        能够认识你,我已经很开心了.
+    </ng-template>
+    `;
+    code5 = `
+    我想大声地告诉你:
+    <ng-template [ngIf]="true">
+        能够认识你,我已经很开心了.
+    </ng-template>
+    `;
+    code6 = `
+    <ng-container>
+        <p>小时候刮奖刮出“谢”字还不扔，非要把“谢谢惠顾”都刮的干干净净才舍得放手，和后来太多的事一模一样。</p>
+    </ng-container>
     `;
 }

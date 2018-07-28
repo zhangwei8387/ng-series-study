@@ -190,8 +190,19 @@
         </li>
     </ul>
     <div class="info">
-        由于指令涉及DOM操作,对于DOM操作部分在此不再赘述,可自行前往其他章节查看.
+        由于指令涉及DOM操作,对于DOM操作部分在此不再赘述,可自行前往其他章节查看.(打算写,但还没写)
     </div>
+    关于自定义结构型指令需要预先了解以下三个概念:
+    <br/>
+    <span class="key-word">TemplateRef</span>:表示内嵌的HTML模板.
+    <br/>
+    <span class="key-word">ViewContainerRef</span>:表示视图容器,创建和管理内嵌视图.
+    <br/>
+    <strong>依赖注入</strong>:如果做过java开发的同学一点听过依赖注入.以我浅显的水平,我个人认为就是将控制权交给了父组件.在本案例中,注入的方式就是在构造函数中的写法.
+    <div class="info">
+        对于新手来说,暂时很难理解这三个概念.你可以这样理解,一个DOM元素带了结构型指令之后,他不再是一个DOM,进入指令后,他提供了两个控制权,一个是自身的模板控制权,一个是容器控制权.尝试看看下面的伪代码是能理解,实在理解不了暂时先不管,后面还会多次遇到的.
+    </div>
+    <code-mirror [code]="code1"></code-mirror>
     <h4>示例</h4>
     由于我本人比较爱喝奶茶,这里以奶茶为主题,个人喜爱的口味分别为抹茶、红豆、奥利奥(按喜爱程度排序).
     <br/>假设你要请我喝奶茶,你可以选择奶茶的类型,如果是奥利奥奶茶,我选择喝一杯.如果是红豆奶茶,我选择喝两杯.如果是抹茶奶茶,我选择喝三杯.
@@ -205,6 +216,11 @@
             </code-mirror>
         </nz-tab>
     </nz-tabset>
+    <span class="key-word">@Input</span>是用来读取外部流进来的数据的.
+    <br/> 这是Angular当中组件与组件通讯的一种方式,简单地说,组件和组件之间通讯,肯定需要一种约定,那么Angular给了我们一种解决方案,就是在组件内部声明Input,这个值可以接收外部参数.
+    <br/> 在我们的案例中,
+    <span class="key-word">nssMilkTeaType</span>是我们的指令名,一旦使用直接就会直接调用指令中的
+    <span class="key-word">type</span>方法,同时将实参传给这个方法的虚参.
     <h4>运行结果</h4>
     <nz-radio-group [(ngModel)]="milkTeaType">
         <label nz-radio nzValue="oreo">请Eve喝奥利奥奶茶</label>

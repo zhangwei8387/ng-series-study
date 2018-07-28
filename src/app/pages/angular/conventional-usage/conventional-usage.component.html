@@ -1,10 +1,16 @@
 <div class="tutorial">
+    <h2 id="resume">概述</h2>
+    本章讲解的内容是在Angular当中非常常用的API,常见不代表简单,有些API相对来说比较难于理解,如果反复阅读后还是无法理解,可以暂时搁置,继续看其他章节的内容,逐渐地理解.
+    <div class="info">
+       我个人认为,很多时候,软件开发的理论无异于玄学,初期根本听不懂.但是在开发久了之后,会发现那些理论说的是对的. <br/>
+       所以我个人对于软件开发有个小小的看法,就是先学会用,再学会理解.
+    </div>
     <h2 id="default-code-analyze">默认代码分析</h2>
     观察之前新建的项目,在
     <span class="key-word">app.component.ts</span>中可以看到如下代码
     <ul>
         <li>
-            <span class="key-word">selector</span>指明其CSS选择器
+            <span class="key-word">selector</span>指明其选择器名
         </li>
         <li>
             <span class="key-word">templateUrl</span>指明其使用哪个模板文件
@@ -13,8 +19,7 @@
             <span class="key-word">styleUrls</span>指明使用哪些CSS样式表
         </li>
     </ul>
-    <code-mirror [code]="templateUrlCode">
-    </code-mirror>
+    <code-mirror [code]="templateUrlCode"></code-mirror>
     我们知道,传统页面都是html+css+js组成的,那么我们回忆下,是谁将这三者结合在一起的?没错,是html.使用
     <span class="key-word">link</span>和
     <span class="key-word">script</span>标签引入样式表和脚本文件.所以,在传统页面中,
@@ -171,12 +176,15 @@
     在渲染模版时,
     <span class="key-word">className</span>来自数据源的变量,属于从数据源到视图的传值,所以是单向绑定.
     <h4>案例4</h4>
-    <span class="key-word">ngModel</span>会将数据源中的centence的值与input的值进行绑定,并且是双向绑定.即无论哪方修改了值,另外一方马上也会修改值.注意,如果使用
-    <span class="key-word">ngModel</span>则必须声明
-    <span class="key-word">name</span>属性.当点击按钮时,调用
+    <span class="key-word">ngModel</span>会将数据源中的centence的值与input的值进行绑定,并且是双向绑定.即无论哪方修改了值,另外一方马上也会修改值.当点击按钮时,调用
     <span class="key-word">showMsg(centence)</span>方法,而
     <span class="key-word">centence</span>的值是来自数据源的值,和上面input的
     <span class="key-word">ngModel</span>没有直接关系.所以这里在这个案例中,既有双向绑定又有单向绑定.
+    <div class="warning">
+        如果使用
+        <span class="key-word">ngModel</span>则必须声明
+        <span class="key-word">name</span>属性.但是二者的属性值未必要保持一致,我在案例中一般是一致的,图个方便而已.
+    </div>
     <h4>数据流图</h4>
     附上一副hin凌乱的数据流向图...大概能看的懂吧...
     <img src="../../../../assets/img/dataFlow.png">
@@ -236,13 +244,84 @@
     </nz-tabset>
     <h3>运行结果</h3>
     <nz-card class="card">
-        My name is {{user.name}} and I was born in {{user.bornYear}},my lover is 
+        My name is {{user.name}} and I was born in {{user.bornYear}},my lover is
     </nz-card>
     <!-- 源码中没有使用安全导航符,是因为aot编译会报错. -->
+    <h2 id="ng-content">ng-content</h2>
+    这部分知识要求你对父子组件有略微了解,如果你完全没接触过父子组件,建议你先看一下
+    <a routerLink="/angular/component-communication">组件交互</a>.
+    <br/> 通常,我们使用父子组件时都是直接使用标签名,内部不包含内容.
+    <code-mirror [code]="code1"></code-mirror>
+    那如果包含了内容呢?实际上,默认情况下是会被省略的.如果希望内容在子组件中出现呢?为了应对这个场景,Angular提供了
+    <span class="key-word">ng-content</span>.
+    <br/> 现在我们来实现这样的一个需求,在子组件的标签中,放置三句话,这三句话能够在子组件的特定位置显示.在子组件中需要显示的地方,放置
+    <span class="key-word">ng-content</span>标签,相当于占位符的作用.在渲染页面时,会自动将父组件中的内容映射到
+    <span class="key-word">ng-content</span>当中.
+    <br/> 现在我们来思考另外一个场景,我不只要把内容放进去,而且要按自己想要的内容放成几块,或者过滤一部分内容,该怎么做呢?
+    <span class="key-word">ng-content</span>拥有
+    <span class="key-word">select</span>属性,可以起到过滤作用.类似于css选择器,他可以过滤父组件传来的内容,根据class类名或者标签名进行过滤.
+    <nz-tabset>
+        <nz-tab nzTitle="父组件html">
+            <code-mirror [code]="code2"></code-mirror>
+        </nz-tab>
+        <nz-tab nzTitle="子组件html">
+            <code-mirror [code]="code3"></code-mirror>
+        </nz-tab>
+    </nz-tabset>
+    <h3>运行结果</h3>
+    <nz-card class="card">
+        <h1>父组件</h1>
+        <input nz-input [(ngModel)]="sentence" name="sentence" class="sentence">
+        <stomach>
+            <div style="margin-bottom: 14px;">{{sentence}}</div>
+            <p>所谓的不公,只是不符合人类社会法则</p>
+            <span class="className">却符合因果关系</span>
+        </stomach>
+    </nz-card>
+    <h2 id="ng-template">ng-template</h2>
+    当
+    <span class="key-word">ng-template</span>上没有结构型指令时,是不会产生作用的.也就是说,如果只有一个单独的
+    <span class="key-word">ng-template</span>,无论内部包含了什么,都会显示为注释
+    <code-mirror [code]="code4"></code-mirror>
+    <h3>运行结果</h3>
+    <nz-card class="card">
+        我想大声地告诉你:
+        <ng-template>
+            能够认识你,我已经很开心了.
+        </ng-template>
+    </nz-card>
+    当
+    <span class="key-word">ng-template</span>拥有结构型指令时,就会开始工作.
+    <span class="key-word">ngIf</span>是
+    <a routerLink="/angular/structural-directive">结构型指令</a>,简单地说,如果其值为true,则显示内容,否则抹去DOM结点.
+    <code-mirror [code]="code5"></code-mirror>
+    <h3>运行结果</h3>
+    <nz-card class="card">
+        我想大声地告诉你:
+        <ng-template [ngIf]="true">
+            能够认识你,我已经很开心了.
+        </ng-template>
+    </nz-card>
+    <h2 id="ng-container">ng-container</h2>
+    <span class="key-word">ng-container</span>只是一个分组元素,它的特点就是在渲染页面时,自身不加入DOM.你可以使用浏览器的开发者工具,查看运行结果中的这句话,是否只有p标签包围.
+    <div class="warning">
+        如果你真的查看HTML源码,你会看到p标签的上一层是一个样式为ant-card-body的div标签,这是我的运行结果容器,也就是这个灰色背景,并不是ng-container带来的.
+    </div>
+    <code-mirror [code]="code6"></code-mirror>
+    <h3>运行结果</h3>
+    <nz-card class="card">
+        <ng-container>
+            <p>小时候刮奖刮出“谢”字还不扔，非要把“谢谢惠顾”都刮的干干净净才舍得放手，和后来太多的事一模一样。</p>
+        </ng-container>
+    </nz-card>
 </div>
 <nz-anchor class="anchor">
+    <nz-link nzHref="#resume" nzTitle="概述"></nz-link>
     <nz-link nzHref="#default-code-analyze" nzTitle="默认代码分析"></nz-link>
     <nz-link nzHref="#interpolation" nzTitle="插值表达式"></nz-link>
     <nz-link nzHref="#bind" nzTitle="绑定机制"></nz-link>
     <nz-link nzHref="#safe-nav-op" nzTitle="安全导航操作符"></nz-link>
+    <nz-link nzHref="#ng-content" nzTitle="ng-content"></nz-link>
+    <nz-link nzHref="#ng-template" nzTitle="ng-template"></nz-link>
+    <nz-link nzHref="#ng-container" nzTitle="ng-container"></nz-link>
 </nz-anchor>

@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 @Component({
     selector:'code-mirror',
-    templateUrl: './codemirror.component.html'
+    templateUrl: './codemirror.component.html',
+    styleUrls: ['./codemirror.component.less']
 })
 export class CodemirrorComponent {
     @Input() code: string;

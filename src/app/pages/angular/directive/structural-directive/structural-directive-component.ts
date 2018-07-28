@@ -263,14 +263,14 @@ export class StructuralDirectiveComponent {
     import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
     @Directive({
-        selector: '[milkTeaType]'
+        selector: '[nssMilkTeaType]'
     })
-    export class MilkTeaDirective {
+    export class NssMilkTeaDirective {
         constructor(
             private templateRef: TemplateRef<any>,
             private viewContainer: ViewContainerRef) {
         }
-        @Input() set milkTeaType(type: string) {
+        @Input('nssMilkTeaType') set type(type: string) {
             if (type === 'oreo') {
                 this.viewContainer.clear();//清除所有内嵌视图
                 this.viewContainer.createEmbeddedView(this.templateRef);//创建内嵌视图
@@ -285,9 +285,29 @@ export class StructuralDirectiveComponent {
                 this.viewContainer.createEmbeddedView(this.templateRef);
             }
         }
-    }`;
+    }
+    `;
     milkTeaType = 'oreo';
     trackByCityCode(obj: { code: string, name: string }) {
         return obj.code;
     }
+    code1 = `
+    <p *directive>
+        hello world
+    </p>
+    <!--经过指令后-->
+    <!--产物一:HTML模板-->
+    <p>
+        hello world
+    </p>
+    <!--产物二:视图容器-->
+    <container>
+    </container>
+    <!--在容器中添加模板-->
+    <container>
+        <p>
+            hello world
+        </p>
+    </container>
+    `;
 }

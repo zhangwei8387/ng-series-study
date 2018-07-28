@@ -8,7 +8,7 @@ export class NssMilkTeaDirective {
         private templateRef: TemplateRef<any>,
         private viewContainer: ViewContainerRef) {
     }
-    @Input() set nssMilkTeaType(type: string) {
+    @Input('nssMilkTeaType') set type(type: string) {
         if (type === 'oreo') {
             this.viewContainer.clear();//清除所有内嵌视图
             this.viewContainer.createEmbeddedView(this.templateRef);//创建内嵌视图
