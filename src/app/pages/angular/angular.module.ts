@@ -22,6 +22,8 @@ import { AddPersonComponent } from './component/dynamic-component/child/add-pers
 import { StomachComponent } from './conventional-usage/stomach/stomach.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { ShapePipe } from './pipe/shape-pipe/shape.pipe';
+import { LifecycleComponent } from './component/lifecycle/lifecycle.component';
+import { ChildLifecycleComponent } from './component/lifecycle/child/child.component';
 
 const COMPONENTS_DECLARATIONS = [
     StructuralDirectiveComponent,
@@ -39,6 +41,8 @@ const COMPONENTS_DECLARATIONS = [
     DynamicComponentComponent,
     StomachComponent,
     PipeComponent,
+    LifecycleComponent,
+    ChildLifecycleComponent,
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,

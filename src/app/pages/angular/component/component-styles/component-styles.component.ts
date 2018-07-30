@@ -5,9 +5,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./component-styles.component.less']
 })
 export class ComponentStylesComponent {
-    constructor(
-    ) {
-    }
     code1 = `
     <h1>父组件</h1>
     <span class="color bgColor">父组件的内容</span>

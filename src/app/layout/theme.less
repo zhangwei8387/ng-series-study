@@ -73,3 +73,9 @@ div.warning{
     height: auto;
     margin: 15px 0px 15px 0px;
 }
+//代码显示器上边距设置为15px,但是nz-tabset自带内边距,所以不需要那15px
+nz-tabset{
+    .codemirror-container{
+        margin-top: 0px !important;
+    }
+}
