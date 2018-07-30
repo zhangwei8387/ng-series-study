@@ -3,7 +3,6 @@ import { SharedModule } from '../../shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AngularRoutingModule } from './angular-routing.module';
 
-import { DirectiveComponent } from './directive/directive.component';
 import { CreateComponent } from './create/create.component';
 import { ConventionalUsageComponent } from './conventional-usage/conventional-usage.component';
 import { InitPageComponent } from './create/init-page/init-page.component';
@@ -21,9 +20,10 @@ import { CodemirrorComponent } from '../child-common/codemirror/codemirror.compo
 import { DynamicComponentComponent } from './component/dynamic-component/dynamic-component.component';
 import { AddPersonComponent } from './component/dynamic-component/child/add-person.component';
 import { StomachComponent } from './conventional-usage/stomach/stomach.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { ShapePipe } from './pipe/shape-pipe/shape.pipe';
 
 const COMPONENTS_DECLARATIONS = [
-    DirectiveComponent,
     StructuralDirectiveComponent,
     AttributeDirectiveComponent,
     CreateComponent,
@@ -38,6 +38,7 @@ const COMPONENTS_DECLARATIONS = [
     CodemirrorComponent,
     DynamicComponentComponent,
     StomachComponent,
+    PipeComponent,
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,
@@ -53,7 +54,8 @@ const COMPONENTS_ENTRY = [AddPersonComponent];
     declarations: [
         COMPONENTS_DECLARATIONS,
         DIRECTIVE_DECLARATIONS,
-        COMPONENTS_ENTRY
+        COMPONENTS_ENTRY,
+        ShapePipe
     ],
     entryComponents: COMPONENTS_ENTRY
 })
