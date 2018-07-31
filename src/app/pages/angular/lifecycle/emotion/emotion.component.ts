@@ -1,11 +1,11 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
-    selector: 'child-lifecycle',
-    templateUrl: './child.component.html',
-    styleUrls: ['./child.component.less']
+    selector: 'emotion',
+    templateUrl: './emotion.component.html',
+    styleUrls: ['./emotion.component.less']
 })
-export class ChildLifecycleComponent implements OnChanges {
+export class EmotionComponent implements OnChanges {
     @Input() name: string;
     firstLover;
     currentLover;

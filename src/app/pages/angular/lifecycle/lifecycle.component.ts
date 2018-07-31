@@ -44,10 +44,10 @@ export class LifecycleComponent implements OnInit {
     <h1>父组件</h1>
     <input nz-input [(ngModel)]="currentLover" name="currentLover" placeholder="请输入现任">
     <button (click)="record()" nz-button nzType="primary">更新</button>
-    <child-lifecycle [name]="currentName"></child-lifecycle>
+    <emotion [name]="currentName"></emotion>
     `;
     code2 = `
-    export class ChildLifecycleComponent implements OnInit {
+    export class LifecycleComponent implements OnInit {
         currentLover = '迪丽热巴';
         currentName;
         record() {
@@ -67,7 +67,7 @@ export class LifecycleComponent implements OnInit {
     </ul>
     `;
     code4 = `
-    export class ChildLifecycleComponent implements OnChanges {
+    export class EmotionComponent implements OnChanges {
         @Input() name: string;
         firstLover;
         currentLover;
