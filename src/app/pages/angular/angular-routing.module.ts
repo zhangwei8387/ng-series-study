@@ -9,7 +9,7 @@ import { StructuralDirectiveComponent } from './directive/structural-directive/s
 import { AttributeDirectiveComponent } from './directive/attribute-directive/attribute-directive-component';
 import { DynamicComponentComponent } from './component/dynamic-component/dynamic-component.component';
 import { PipeComponent } from './pipe/pipe.component';
-import { EmotionComponent } from './lifecycle/emotion/emotion.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 const routes: Routes = [
   { path: 'structural-directive', component: StructuralDirectiveComponent },
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'component-styles', component: ComponentStylesComponent },
   { path: 'dynamic-component', component: DynamicComponentComponent },
   { path: 'pipe', component: PipeComponent },
-  { path: 'lifecycle', component: EmotionComponent },
+  { path: 'lifecycle', component: LifecycleComponent },
 ];
 
 @NgModule({

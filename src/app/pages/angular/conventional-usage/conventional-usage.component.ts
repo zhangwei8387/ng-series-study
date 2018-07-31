@@ -3,7 +3,7 @@ import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
     templateUrl: './conventional-usage.component.html',
-    styleUrls: ['./conventional-usagel.component.less']
+    styleUrls: ['./conventional-usage.component.less']
 })
 export class ConventionalUsageComponent {
     constructor(
