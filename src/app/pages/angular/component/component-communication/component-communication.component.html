@@ -15,10 +15,6 @@
     <a routerLink="/angular/conventional-usage">常规用法</a>中我提到过的
     <span class="key-word">selector</span>吗?当时我的解释是,他起到标记的作用.这也就是为什么在父组件当中使用
     <span class="key-word">child-communication</span>作为标签名,Angular能够定位这个组件的原因.
-    <div class="warning">
-        注意!子组件也需要在
-        <span class="key-word">PagesModule</span>(我的模块名叫这个)当中声明才能使用,并且是显式声明.
-    </div>
     <nz-tabset>
         <nz-tab nzTitle="父组件html">
             <code-mirror [code]="faterCodeHtml">

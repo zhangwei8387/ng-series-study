@@ -150,4 +150,17 @@ export class ConventionalUsageComponent {
         <p>小时候刮奖刮出“谢”字还不扔，非要把“谢谢惠顾”都刮的干干净净才舍得放手，和后来太多的事一模一样。</p>
     </ng-container>
     `;
+    code = `
+    import { YourPipe } from './your.pipe';
+    import { YourComponent } from './your.component';
+    import { YourDirective } from './your.directive';
+
+    @NgModule({
+        declarations: [
+            YourPipe,
+            YourComponent,
+            YourDirective,
+        ]
+    })
+    `;
 }

@@ -10,6 +10,7 @@ import { AttributeDirectiveComponent } from './directive/attribute-directive/att
 import { DynamicComponentComponent } from './component/dynamic-component/dynamic-component.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { InitialFormComponent } from './form/Initial-form/Initial-form.component';
 
 const routes: Routes = [
   { path: 'structural-directive', component: StructuralDirectiveComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'dynamic-component', component: DynamicComponentComponent },
   { path: 'pipe', component: PipeComponent },
   { path: 'lifecycle', component: LifecycleComponent },
+  { path: 'initial-form', component: InitialFormComponent },
 ];
 
 @NgModule({

@@ -2,8 +2,8 @@
     <h2 id="resume">概述</h2>
     本章讲解的内容是在Angular当中非常常用的API,常见不代表简单,有些API相对来说比较难于理解,如果反复阅读后还是无法理解,可以暂时搁置,继续看其他章节的内容,逐渐地理解.
     <div class="info">
-       我个人认为,很多时候,软件开发的理论无异于玄学,初期根本听不懂.但是在开发久了之后,会发现那些理论说的是对的. <br/>
-       所以我个人对于软件开发有个小小的看法,就是先学会用,再学会理解.
+        我个人认为,很多时候,软件开发的理论无异于玄学,初期根本听不懂.但是在开发久了之后,会发现那些理论说的是对的.
+        <br/> 所以我个人对于软件开发有个小小的看法,就是先学会用,再学会理解.
     </div>
     <h2 id="default-code-analyze">默认代码分析</h2>
     观察之前新建的项目,在
@@ -39,6 +39,42 @@
     <span class="key-word">templateUrl</span>,虽然模板文件只有一个,但并不一定要通过这个关键字声明.也可以使用
     <span class="key-word">template</span>来声明.二者的区别相信大家一眼就看出来,前者是指定了某一个html文件作为模板,后者是直接将html代码写在ts当中.两种方式随你喜欢,不影响使用.
     <code-mirror [code]="templateCode"></code-mirror>
+    <h2 id="app-module-ts">app.module.ts</h2>
+    在
+    <a routerLink="/angular/create">创建项目</a>部分,已经大致地介绍过文件结构,这里需要将
+    <span class="key-word">app.module.ts</span>单独拿出来好好介绍一下.这个文件关系到之后几乎所有的案例.
+    <br/> 在这个文件当中,主要由以下几部分组成
+    <ul>
+        <li>使用
+            <span class="key-word">import引入</span>模块
+        </li>
+        <li>
+            在
+            <span class="key-word">@NgModule</span>中配置引入的模块
+        </li>
+    </ul>
+    这里最难理解的显然是
+    <span class="key-word">@NgModule</span>部分,该部分主要有以下几个字段
+    <ul>
+        <li>
+            declarations —— 导入该应用的组件、管道、指令
+        </li>
+        <li>
+            imports —— 导入其他模块供本模块使用
+        </li>
+        <li>
+            providers —— 声明服务
+        </li>
+        <li>
+            bootstrap —— 应用启动的根组件
+        </li>
+    </ul>
+    也许你看了这个简单的描述之后,完全没有理解其含义.这是正常的,这个部分我个人认为是蛮抽象的,其实暂时不用太搭理它,之后我们详细来谈谈这部分.之所以提前把这个知识点先列出来,是因为之后的案例需要用到这个部分.所以,请记好了: <br/>
+    <strong>
+        你声明的子组件、管道、指令,其类名都需要在这里引入并且在 <span class="key-word">declarations</span>当中声明.
+    </strong>
+    大概像这个样子
+    <code-mirror [code]="code"></code-mirror>
     <h2 id="interpolation">插值表达式</h2>
     思考一个问题,在传统开发中,JS定义了一个用户名,如何放在html当中合适的位置呢?查看如下所示代码,是否与你想的一样?
     <nz-tabset>
@@ -318,6 +354,7 @@
 <nz-anchor class="anchor">
     <nz-link nzHref="#resume" nzTitle="概述"></nz-link>
     <nz-link nzHref="#default-code-analyze" nzTitle="默认代码分析"></nz-link>
+    <nz-link nzHref="#app-module-ts" nzTitle="app.module.ts"></nz-link>
     <nz-link nzHref="#interpolation" nzTitle="插值表达式"></nz-link>
     <nz-link nzHref="#bind" nzTitle="绑定机制"></nz-link>
     <nz-link nzHref="#safe-nav-op" nzTitle="安全导航操作符"></nz-link>

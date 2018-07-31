@@ -114,6 +114,42 @@
     <nz-card class="card">
         <init-page></init-page>
     </nz-card>
+    <h2 id="file-structural">文件结构概览</h2>
+    新建项目后,CLI会自动帮你创建一系列文件,现在我们来简单地看看这些文件的用途.(此部分的表格信息引用自官网)
+    <div class="info">
+        如果你对下表中文件用途说明不是特别理解,也没关系,不理解是正常的,看一眼就知道是干嘛的,说明你是大神了.如果你是初学者,你只需要有个印象就可以.
+    </div>
+    首先来看下根目录的文件结构
+    <nz-table #table1 [nzData]="fileStructuralGlobal" nzShowPagination="false">
+        <thead>
+            <tr>
+                <th>文件</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of table1.data">
+                <td>{{data.name}}</td>
+                <td>{{data.value}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+    现在我们来看下核心目录
+    <span class="key-word">src</span>的文件结构
+    <nz-table #table2 [nzData]="fileStructuralSrc" nzShowPagination="false">
+        <thead>
+            <tr>
+                <th>文件</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of table2.data">
+                <td>{{data.name}}</td>
+                <td>{{data.value}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
 </div>
 <nz-anchor class="anchor">
     <nz-link nzHref="#init-angular-cli" nzTitle="初识Angular CLI"></nz-link>
@@ -122,4 +158,5 @@
     </nz-link>
     <nz-link nzHref="#create-project" nzTitle="创建新项目"></nz-link>
     <nz-link nzHref="#start-server" nzTitle="启动开发服务器"></nz-link>
+    <nz-link nzHref="#file-structural" nzTitle="文件结构概览"></nz-link>
 </nz-anchor>

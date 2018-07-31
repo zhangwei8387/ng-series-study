@@ -21,7 +21,7 @@ export class ShapePipe implements PipeTransform {
                 return result += '正常';
             } else if (BMI <= 27.9) {
                 return result += '过重';
-            } else {
+            } else if (BMI > 27.9) {
                 return result += '肥胖';
             }
         } else {
