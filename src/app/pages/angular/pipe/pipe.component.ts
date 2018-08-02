@@ -78,7 +78,7 @@ export class PipeComponent implements DoCheck {
                     return result += '正常';
                 } else if (BMI <= 27.9) {
                     return result += '过重';
-                } else {
+                } else if (BMI > 27.9) {
                     return result += '肥胖';
                 }
             } else {

@@ -11,6 +11,7 @@ import { DynamicComponentComponent } from './component/dynamic-component/dynamic
 import { PipeComponent } from './pipe/pipe.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { InitialFormComponent } from './form/Initial-form/Initial-form.component';
+import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
 
 const routes: Routes = [
   { path: 'structural-directive', component: StructuralDirectiveComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'pipe', component: PipeComponent },
   { path: 'lifecycle', component: LifecycleComponent },
   { path: 'initial-form', component: InitialFormComponent },
+  { path: 'template-driven-form', component: TemplateDrivenFormComponent },
 ];
 
 @NgModule({

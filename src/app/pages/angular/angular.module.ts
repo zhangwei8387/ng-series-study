@@ -25,6 +25,7 @@ import { ShapePipe } from './pipe/shape-pipe/shape.pipe';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { EmotionComponent } from './lifecycle/emotion/emotion.component';
 import { InitialFormComponent } from './form/Initial-form/Initial-form.component';
+import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
 
 const COMPONENTS_DECLARATIONS = [
     StructuralDirectiveComponent,
@@ -44,7 +45,8 @@ const COMPONENTS_DECLARATIONS = [
     PipeComponent,
     LifecycleComponent,
     EmotionComponent,
-    InitialFormComponent
+    InitialFormComponent,
+    TemplateDrivenFormComponent
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,
