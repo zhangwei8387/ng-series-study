@@ -12,6 +12,7 @@ import { PipeComponent } from './pipe/pipe.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { InitialFormComponent } from './form/Initial-form/Initial-form.component';
 import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
+import { ValidationFormComponent } from './form/validation-form/validation-form.component';
 
 const routes: Routes = [
   { path: 'structural-directive', component: StructuralDirectiveComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'lifecycle', component: LifecycleComponent },
   { path: 'initial-form', component: InitialFormComponent },
   { path: 'template-driven-form', component: TemplateDrivenFormComponent },
+  { path: 'validation-form', component: ValidationFormComponent },
 ];
 
 @NgModule({

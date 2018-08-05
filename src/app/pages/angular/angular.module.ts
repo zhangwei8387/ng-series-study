@@ -26,6 +26,8 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { EmotionComponent } from './lifecycle/emotion/emotion.component';
 import { InitialFormComponent } from './form/Initial-form/Initial-form.component';
 import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
+import { ValidationFormComponent } from './form/validation-form/validation-form.component';
+import { ForbiddenValidatorDirective } from './form/validation-form//forbidden-name.directive';
 
 const COMPONENTS_DECLARATIONS = [
     StructuralDirectiveComponent,
@@ -46,7 +48,8 @@ const COMPONENTS_DECLARATIONS = [
     LifecycleComponent,
     EmotionComponent,
     InitialFormComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    ValidationFormComponent
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,
@@ -63,7 +66,8 @@ const COMPONENTS_ENTRY = [AddPersonComponent];
         COMPONENTS_DECLARATIONS,
         DIRECTIVE_DECLARATIONS,
         COMPONENTS_ENTRY,
-        ShapePipe
+        ShapePipe,
+        ForbiddenValidatorDirective
     ],
     entryComponents: COMPONENTS_ENTRY
 })
