@@ -160,6 +160,7 @@ export class ValidationFormComponent implements OnInit {
         }
     }
     `;
+    demo4Value;
     code10 = `
     <form>
         <input name="name" [(ngModel)]="demo4Value" #demo5="ngModel" nz-input placeholder="值必填且不能包含字符'Eve'" required appForbiddenName="Eve"
