@@ -28,6 +28,7 @@ import { InitialFormComponent } from './form/Initial-form/Initial-form.component
 import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
 import { ValidationFormComponent } from './form/validation-form/validation-form.component';
 import { ForbiddenValidatorDirective } from './form/validation-form//forbidden-name.directive';
+import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 
 const COMPONENTS_DECLARATIONS = [
     StructuralDirectiveComponent,
@@ -49,7 +50,8 @@ const COMPONENTS_DECLARATIONS = [
     EmotionComponent,
     InitialFormComponent,
     TemplateDrivenFormComponent,
-    ValidationFormComponent
+    ValidationFormComponent,
+    ReactiveFormComponent
 ];
 const DIRECTIVE_DECLARATIONS = [
     NssMilkTeaDirective,
